@@ -34,7 +34,7 @@ Worker.template.opt.pagebreak = {
   before: [],
   after: [],
   avoid: [],
-  padding: []
+  padding: 0
 };
 
 Worker.prototype.toContainer = function toContainer() {
