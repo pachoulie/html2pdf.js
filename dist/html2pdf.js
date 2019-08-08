@@ -1,6 +1,6 @@
 /**
  * html2pdf.js v0.9.1
- * Copyright (c) 2018 Erik Koopmans
+ * Copyright (c) 2019 Erik Koopmans
  * Released under the MIT License.
  */
 (function (global, factory) {
@@ -740,7 +740,8 @@ Worker.template.opt.pagebreak = {
   mode: ['css', 'legacy'],
   before: [],
   after: [],
-  avoid: []
+  avoid: [],
+  padding: []
 };
 
 Worker.prototype.toContainer = function toContainer() {
@@ -822,7 +823,7 @@ Worker.prototype.toContainer = function toContainer() {
       if (rules.before) {
         var pad = createElement('div', { style: {
             display: 'block',
-            height: pxPageHeight - clientRect.top % pxPageHeight + 'px'
+            height: self.opt.pagebreak.padding + pxPageHeight - clientRect.top % pxPageHeight + 'px'
           } });
         el.parentNode.insertBefore(pad, el);
       }
